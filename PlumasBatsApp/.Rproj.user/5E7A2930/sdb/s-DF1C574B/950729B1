@@ -1,0 +1,17 @@
+{
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyUI(fluidPage(\n\n  # Application title\n  titlePanel(\"Predictors\"),\n\n  # Sidebar with a slider input for number of bins\n  sidebarLayout(\n    sidebarPanel(\n      h3(\"Predicting occupancy in Plumas National Forest\"),\n      p(\"To explore how variables affect occupancy in different bat species in Plumas National Forest, use the sliders bellow.\"),\n      p(\"Variables interact with each other, a specie that has low occupancy at a certain height and high occupancy at lower altitude might revert this if you change burn intensity\"),\n      sliderInput(inputId = \"Distance.to.water\",\n                  label = \"Distance to water (meters):\",\n                  min = 0,\n                  max = 326,\n                  value = 53),\n      sliderInput(inputId = \"Distance.to.road\",\n                  label = \"Distance to road (meters):\",\n                  min = 0,\n                  max = 326,\n                  value = 53),\n      sliderInput(inputId = \"Altitude\",\n                  label = \"Altitude (meters):\",\n                  min = 648,\n                  max = 2309,\n                  value = 245),\n      sliderInput(inputId = \"BC\",\n                  label = \"Burn Intensity\",\n                  min = 0,\n                  max = 5,\n                  value = 1)\n    ),\n\n    # Show a plot of the generated distribution\n    mainPanel(\n      plotOutput(\"distPlot\"),\n      dataTableOutput(\"visFun\")\n    )\n  )\n))\n",
+    "created" : 1449493758812.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "219638758",
+    "id" : "950729B1",
+    "lastKnownWriteTime" : 1449508235,
+    "path" : "~/Documents/PlumasBatsApp/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
