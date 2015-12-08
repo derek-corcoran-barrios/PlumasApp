@@ -26,18 +26,18 @@ shinyUI(fluidPage(
       sliderInput(inputId = "Distance.to.road",
                   label = "Distance to road (meters):",
                   min = 0,
-                  max = 326,
-                  value = 53),
+                  max = 2309,
+                  value = 245),
       sliderInput(inputId = "Altitude",
                   label = "Altitude (meters):",
                   min = 648,
                   max = 2309,
-                  value = 245),
+                  value = 1982),
       sliderInput(inputId = "BC",
                   label = "Burn Intensity",
                   min = 0,
                   max = 5,
-                  value = 1)
+                  value = 3)
     ),
 
     # Show a plot of the generated distribution
