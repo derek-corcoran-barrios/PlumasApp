@@ -1,8 +1,8 @@
 name: PlumasBatsApp
 account: derek-corcoran
 server: shinyapps.io
-bundleId: 326713
+bundleId: 327558
 url: https://derek-corcoran.shinyapps.io/PlumasBatsApp
-when: 1449577715.62186
+when: 1449669068.32097
 asMultiple: FALSE
 asStatic: FALSE

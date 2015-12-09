@@ -43,7 +43,9 @@ shinyUI(fluidPage(
     # Show a plot of the generated distribution
     mainPanel(
       plotOutput("distPlot"),
-      dataTableOutput("visFun")
+      downloadButton('downloadPlot', 'Download Plot'),
+      dataTableOutput("visFun"),
+      downloadButton('downloadData', 'Download Table')
     )
   )
 ))
