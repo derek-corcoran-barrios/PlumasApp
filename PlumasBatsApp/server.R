@@ -187,21 +187,23 @@ shinyServer(function(input, output) {
       new.data<-t(new.data)
       new.data<-data.frame(new.data)
       colnames(new.data)<- c("Distance.to.water", "Distance.to.road", "Existing.vegetation", "Fire.Interval", "Altitude","Burn.intensity.soil", "Burn.intensity.Canopy", "Burn.intensity.basal")
-      new.data<-predict(preprocov, new.data)
+      new.data1<-predict(preprocov, new.data)
       
-      pred.My.Ca <-predict(best2.My.Ca2, type = "state", new.data)$Predicted
-      pred.My.Yu <-predict(best2.My.Yu2, type = "state", new.data)$Predicted
-      pred.My.Ci <-predict(best2.My.Ci2, type = "state", new.data)$Predicted
-      pred.My.Vo <-predict(best2.My.Vo2, type = "state", new.data)$Predicted
-      pred.My.Lu <-predict(best2.My.Lu2, type = "state", new.data)$Predicted
-      pred.La.Bl <-predict(best2.La.Bl2, type = "state", new.data)$Predicted
-      pred.My.Ev <-predict(best2.My.Ev2, type = "state", new.data)$Predicted
-      pred.An.Pa <-predict(best2.An.Pa2, type = "state", new.data)$Predicted
+      pred.My.Ca <-predict(best2.My.Ca2, type = "state", new.data1)$Predicted
+      pred.My.Yu <-predict(best2.My.Yu2, type = "state", new.data1)$Predicted
+      pred.My.Ci <-predict(best2.My.Ci2, type = "state", new.data1)$Predicted
+      pred.My.Vo <-predict(best2.My.Vo2, type = "state", new.data1)$Predicted
+      pred.My.Lu <-predict(best2.My.Lu2, type = "state", new.data1)$Predicted
+      pred.La.Bl <-predict(best2.La.Bl2, type = "state", new.data1)$Predicted
+      pred.My.Ev <-predict(best2.My.Ev2, type = "state", new.data1)$Predicted
+      pred.An.Pa <-predict(best2.An.Pa2, type = "state", new.data1)$Predicted
       
       Species <- c("Myca", "Myyu", "Myci", "Myvo", "Mylu", "Labl", "Myev", "Anpa")
       Prediction <- c(pred.My.Ca, pred.My.Yu, pred.My.Ci, pred.My.Vo, pred.My.Lu, pred.La.Bl, pred.My.Ev, pred.An.Pa)
       Prediction<-round(Prediction,digits = 2)
-      DF <-data.frame(cbind(Prediction,Species))
+      DF <-data.frame(t(Prediction))
+      colnames(DF) <- Species
+      DF<- cbind(DF,new.data)
       write.csv(DF, file)
     }
   )
