@@ -17,7 +17,7 @@ shinyUI(fluidPage(
     sidebarPanel(
       h3("Predicting occupancy in Plumas National Forest"),
       p("To explore how variables affect occupancy in different bat species in Plumas National Forest, use the sliders bellow."),
-      p("Variables interact with each other, a specie that has low occupancy at a certain height and high occupancy at lower altitude might revert this if you change burn intensity"),
+      p("Variables interact with each other, a species that has low occupancy at a certain height and high occupancy at lower altitude might revert this if you change burn intensity"),
       sliderInput(inputId = "Distance.to.water",
                   label = "Distance to water (meters):",
                   min = 0,
